@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <osp.leobert.blog.code.MView
+        android:layout_width="wrap_content"
+        android:layout_height="100dp" />
+
+<!--    <osp.leobert.blog.code.MViewGroup-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:tag="A">-->
+
+
+<!--        <osp.leobert.blog.code.MViewGroup-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="250dp"-->
+<!--            android:tag="A-B">-->
+
+<!--            <osp.leobert.blog.code.MView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="100dp" />-->
+
+<!--        </osp.leobert.blog.code.MViewGroup>-->
+<!--    </osp.leobert.blog.code.MViewGroup>-->
+
+<!--    <osp.leobert.blog.code.MViewGroup-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:tag="AM" />-->
+
+<!--    <osp.leobert.blog.code.MViewGroup-->
+<!--        android:layout_width="300px"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:tag="A300">-->
+
+<!--        <osp.leobert.blog.code.MViewGroup-->
+<!--            android:layout_width="400px"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:tag="A400" />-->
+<!--    </osp.leobert.blog.code.MViewGroup>-->
+
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@color/colorAccent">-->
+
+<!--        <View-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="1dp"-->
+<!--            android:layout_alignParentBottom="true" />-->
+<!--    </RelativeLayout>-->
+
+</FrameLayout>
