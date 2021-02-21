@@ -10,7 +10,21 @@ import androidx.annotation.VisibleForTesting
  * Created by leobert on 2021/2/18.
  */
 class FrameLayout : ViewGroup() {
+    class LayoutParams(width: Int, height: Int) : ViewGroup.MarginLayoutParams(width, height) {
+        val UNSPECIFIED_GRAVITY = -1
+
+        var gravity = UNSPECIFIED_GRAVITY
+    }
+
     override fun onLayout(changed: Boolean, l: Int, t: Int, r: Int, b: Int) {
+    }
+
+    override fun checkLayoutParams(layoutParams: ViewGroup.LayoutParams): Boolean {
+        return layoutParams is LayoutParams
+    }
+
+    override fun generateDefaultLayoutParams(): ViewGroup.LayoutParams {
+        return LayoutParams(MATCH_PARENT, MATCH_PARENT)
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {

@@ -16,16 +16,17 @@ open class View {
 
     var parent: View? = null
 
-    val layoutParams: MutableMap<String, Int> = mutableMapOf()
+    //    val layoutParams: MutableMap<String, Int> = mutableMapOf()
+    var layoutParams: ViewGroup.LayoutParams? = null
 
     var measuredWidth: Int = WRAP_CONTENT
 
     var measuredHeight: Int = WRAP_CONTENT
 
-    val heightMeasuredSize :Int
+    val heightMeasuredSize: Int
         get() = android.view.View.MeasureSpec.getSize(measuredHeight)
 
-    val widthMeasuredSize :Int
+    val widthMeasuredSize: Int
         get() = android.view.View.MeasureSpec.getSize(measuredWidth)
 
     val heightMeasureMode: Int
@@ -39,13 +40,16 @@ open class View {
 
     fun isMeasured() = measured
 
+    fun draw(canvas: Canvas) {
+
+    }
+
     //绘制能力
     protected open fun onDraw(canvas: Canvas) {
 
     }
 
-    //布局能力
-    protected open fun onLayout(changed: Boolean, l: Int, t: Int, r: Int, b: Int) {
+    protected open fun dispatchDraw(canvas: Canvas) {
 
     }
 
@@ -59,6 +63,16 @@ open class View {
     protected open fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         setMeasuredDimensionRaw(widthMeasureSpec, heightMeasureSpec)
         debugMeasureInfo()
+    }
+
+
+    open fun layout(l: Int, t: Int, r: Int, b: Int) {
+        //todo
+    }
+
+    //布局能力
+    protected open fun onLayout(changed: Boolean, l: Int, t: Int, r: Int, b: Int) {
+
     }
 
     protected fun debugMeasureInfo() {

@@ -39,4 +39,6 @@ public class MView extends View {
 
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
+
+    public void layout(int l, int t, int r, int b) {}
 }

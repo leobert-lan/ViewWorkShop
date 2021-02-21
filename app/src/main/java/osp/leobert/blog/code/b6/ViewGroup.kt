@@ -13,12 +13,25 @@ abstract class ViewGroup : View() {
 
     abstract override fun onLayout(changed: Boolean, l: Int, t: Int, r: Int, b: Int)
 
-    fun addView(view: View) {
+    fun addView(view: View, layoutParams: LayoutParams = generateDefaultLayoutParams()) {
         if (view.parent != null) {
             throw IllegalArgumentException("view has a parent")
         }
+
+        if (!checkLayoutParams(layoutParams)) {
+            throw  IllegalArgumentException("layoutParams 不符合要求")
+        }
+        view.layoutParams = layoutParams
+
         children.add(view)
         view.parent = this
+    }
+
+    @Throws(IllegalStateException::class)
+    abstract fun checkLayoutParams(layoutParams: LayoutParams): Boolean
+
+    open fun generateDefaultLayoutParams(): LayoutParams {
+        return MarginLayoutParams(MATCH_PARENT, MATCH_PARENT)
     }
 
     open class LayoutParams(var width: Int, var height: Int) {
